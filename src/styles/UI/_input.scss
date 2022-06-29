@@ -1,0 +1,34 @@
+.input, .textarea {
+  display: flex;
+  align-items: center;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #311B92;
+  width: 100%;
+  font-size: rem(18px);
+  transition: .2s linear;
+  @media (max-width: 576px) {
+    font-size: rem(16px);
+  }
+  &.active {
+    padding-top: rem(20px);
+  }
+  &:focus {
+    border-color: #651FFF;
+  }
+}
+
+.input {
+  height: rem(60px);
+}
+
+.textarea {
+  resize: none;
+  height: rem(100px);
+  &.active {
+    padding-top: rem(26px);
+  }
+  @media (max-width: 576px) {
+    height: rem(90px);
+  }
+}

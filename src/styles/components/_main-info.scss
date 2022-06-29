@@ -1,0 +1,16 @@
+.main-info {
+  padding: rem(80px) 0 rem(100px) 0;
+  @media (max-width: 768px) {
+    padding: rem(60px) 0 rem(80px) 0;
+  }
+  @media (max-width: 576px) {
+    padding: rem(44px) 0 rem(60px) 0;
+  }
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    @media (max-width: 576px) {
+      flex-direction: column;
+    }
+  }
+}

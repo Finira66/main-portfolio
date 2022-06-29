@@ -1,0 +1,30 @@
+.skill-progress {
+  /*width: 50%;
+  margin-left: auto;
+  margin-right: auto;*/
+  &__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(20px);
+  }
+  &__icon {
+    width: rem(29px);
+    height: rem(29px);
+    margin-right: rem(16px);
+    @media (max-width: 576px) {
+      margin-right: rem(14px);
+      width: rem(24px);
+      height: rem(24px);
+    }
+  }
+  &__name {
+    font-size: rem(24px);
+    font-weight: 500;
+    @media (max-width: 768px) {
+      font-size: rem(22px);
+    }
+    @media (max-width: 576px) {
+      font-size: rem(18px);
+    }
+  }
+}

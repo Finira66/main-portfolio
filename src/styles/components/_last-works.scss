@@ -1,0 +1,22 @@
+.last-works {
+  padding-bottom: rem(110px);
+  @media (max-width: 576px) {
+    padding-bottom: rem(70px);
+  }
+
+  &__title {
+    margin-bottom: rem(50px);
+    @media (max-width: 576px) {
+      margin-bottom: rem(34px);
+    }
+  }
+
+  &__button {
+    max-width: rem(180px);
+    margin: rem(60px) auto 0 auto;
+    @media (max-width: 576px) {
+      margin: rem(40px) auto 0 auto;
+      max-width: rem(150px);
+    }
+  }
+}

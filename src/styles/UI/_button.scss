@@ -1,0 +1,29 @@
+.button {
+  padding: rem(17px) rem(40px);
+  background: #311B92;
+  box-shadow: 0 0 rem(6px) rem(2px) rgba(0, 0, 0, 0.16);
+  border-radius: rem(8px);
+  font-weight: 600;
+  font-size: rem(16px);
+  line-height: rem(17px);
+  color: #fff;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  display: block;
+  transition: .2s linear;
+
+  @media (max-width: 576px) {
+    font-size: rem(14px);
+    padding: rem(15px) rem(34px);
+  }
+
+  &:hover {
+    background: #4026b2;
+  }
+
+  &__back-icon {
+    fill: #fff;
+    margin-right: rem(8px);
+  }
+}

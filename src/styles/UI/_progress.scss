@@ -1,0 +1,40 @@
+.progress {
+  position: relative;
+  overflow: hidden;
+  progress {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    left: -777px;
+  }
+}
+
+.progress-bar {
+  overflow: hidden;
+  background: #651FFF;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.progress-bg {
+  background: rgba(#000, 0.12);
+  position: relative;
+  height: rem(8px);
+  border-radius: rem(5px);
+  overflow: hidden;
+  @media (max-width: 576px) {
+    height: rem(6px);
+  }
+}
+
+@for $i from 0 through 100 {
+  .progress progress[value="#{$i}"]
+  {
+    & + .progress-value:before { content : '#{$i}%' }
+    & ~ .progress-bg .progress-bar { width: $i * 1% }
+  }
+}

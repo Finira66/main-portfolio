@@ -1,0 +1,112 @@
+// utils
+@import "utils/mixins";
+@import "utils/functions";
+
+// base
+@import "base/reset";
+@import "base/typography";
+
+// ui
+@import "UI/button";
+@import "UI/progress";
+@import "UI/title";
+@import "UI/input";
+
+// components
+@import "components/about-me";
+@import "components/last-works";
+@import "components/portfolio/portfolio";
+@import "components/portfolio/portfolio-card";
+@import "components/main-skills";
+@import "components/skill-progresss";
+@import "components/contact";
+@import "components/form";
+@import "components/contact-me";
+@import "components/main-info";
+
+html {
+  font-size: ($root-font-size / 16px) * 100%;
+  height: 100%;
+}
+
+body {
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2B2B2B;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: rem(24px);
+  grid-row-gap: rem(30px);
+  @media (max-width: 992px) {
+    grid-column-gap: rem(20px);
+    grid-row-gap: rem(22px);
+  }
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 576px) {
+    grid-row-gap: rem(14px);
+    grid-column-gap: rem(12px);
+  }
+}
+
+.observer {
+  height: rem(30px);
+  width: 100%;
+  position: absolute;
+  bottom: rem(-20px);
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.form-area {
+  position: relative;
+}
+
+.form-label {
+  font-size: rem(18px);
+  color: #2B2B2B;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  pointer-events: none;
+  transition: .2s linear;
+
+  @media (max-width: 576px) {
+    font-size: rem(16px);
+  }
+
+  span {
+    color: #d21f1f;
+  }
+
+  &--top {
+    top: rem(8px);
+    transform: translateY(0);
+  }
+
+  &.active {
+    transform: translateY(0);
+    top: 0;
+    font-size: rem(16px);
+    @media (max-width: 576px) {
+      font-size: rem(14px);
+    }
+  }
+
+}
+

@@ -1,0 +1,27 @@
+.title {
+  text-align: center;
+  font-size: rem(44px);
+  text-transform: uppercase;
+  font-weight: 500;
+
+  @media (max-width: 768px) {
+    font-size: rem(34px);
+  }
+  @media (max-width: 576px) {
+    font-size: rem(28px);
+  }
+
+  &--start {
+    text-align: start;
+  }
+
+  &--mb-md {
+    margin-bottom: rem(40px);
+    @media (max-width: 768px) {
+      margin-bottom: rem(32px);
+    }
+    @media (max-width: 576px) {
+      margin-bottom: rem(30px);
+    }
+  }
+}

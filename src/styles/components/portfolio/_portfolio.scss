@@ -1,0 +1,30 @@
+.portfolio {
+  padding: rem(90px) 0 rem(120px) 0;
+  @media (max-width: 768px) {
+    padding: rem(70px) 0 rem(100px) 0;
+  }
+  @media (max-width: 576px) {
+    padding: rem(50px) 0 rem(90px) 0;
+  }
+  &__title {
+    margin-bottom: rem(50px);
+    @media (max-width: 576px) {
+      margin-bottom: rem(40px);
+    }
+  }
+  &__button {
+    margin-bottom: rem(20px);
+    max-width: rem(150px);
+    @media (max-width: 768px) {
+      margin-bottom: rem(40px);
+    }
+    @media (max-width: 576px) {
+      max-width: rem(130px);
+    }
+  }
+  &__inner {
+    position: relative;
+  }
+
+}
+

@@ -1,0 +1,6 @@
+.contact-me {
+  padding-bottom: rem(100px);
+  @media (max-width: 576px) {
+    padding-bottom: rem(84px);
+  }
+}
