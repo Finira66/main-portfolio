@@ -7,6 +7,7 @@
   width: 100%;
   font-size: rem(18px);
   transition: .2s linear;
+  border-radius: 0;
   @media (max-width: 576px) {
     font-size: rem(16px);
   }

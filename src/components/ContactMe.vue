@@ -4,7 +4,11 @@
       <div class="title title--mb-md contact-me__title">
         Contact Me
       </div>
-      <form @submit.prevent="submit" class="form">
+      <form
+          enctype="multipart/form-data"
+          method="post"
+          @submit.prevent="submit(event, 'send.php')"
+          class="form">
         <div class="form__items">
           <div class="form-area form__item">
             <div class="form-label">What is your name? <span>*</span></div>
@@ -12,6 +16,7 @@
                 type="text"
                 class="input"
                 required
+                name="name"
                 v-model="name"
                 @focus="handleFocus"
                 @blur="handleBlur">
@@ -22,6 +27,7 @@
                 type="text"
                 class="input"
                 required
+                name="email"
                 v-model="email"
                 @focus="handleFocus"
                 @blur="handleBlur">
@@ -31,6 +37,7 @@
             <textarea
                 class="textarea"
                 required
+                name="message"
                 v-model="message"
                 @focus="handleFocus"
                 @blur="handleBlur"
@@ -69,8 +76,28 @@ export default {
         input.classList.remove('active');
       }
     },
-    submit() {
-      console.log('submit')
+    submit(event, php) {
+      console.log("Отправка запроса");
+
+      let req = new XMLHttpRequest();
+      req.open('POST', php, true);
+      req.onload = function () {
+        if (req.status >= 200 && req.status < 400) {
+          let json = JSON.parse(this.response);
+
+          // ЗДЕСЬ УКАЗЫВАЕМ ДЕЙСТВИЯ В СЛУЧАЕ УСПЕХА ИЛИ НЕУДАЧИ
+          if (json.result == "success") {
+            // Если сообщение отправлено
+            alert("Данные отправлены");
+          } else {
+            // Если произошла ошибка
+            alert("Ошибка. Сообщение не отправлено");
+          }
+          // Если не удалось связаться с php файлом
+        } else {
+          alert("Ошибка сервера. Номер: " + req.status);
+        }
+      };
     }
   }
 }

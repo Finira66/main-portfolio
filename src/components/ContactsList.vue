@@ -9,10 +9,6 @@
         <img :src="setImageUrl(contact.attributes.image.data.attributes.url)" alt="icon" class="contact__icon">
         <div class="contact__name">{{ contact.attributes.name }}</div>
       </a>
-      <!--      <a href="#" class="contact__item">
-              <img src="@/assets/images/icons/mail.svg" alt="" class="contact__icon">
-              <div class="contact__name">E-mail</div>
-            </a>-->
     </div>
   </div>
 </template>
@@ -25,7 +21,6 @@ export default {
       contacts: []
     }
   },
-
   methods: {
     async getContacts() {
       try {
