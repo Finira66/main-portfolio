@@ -1,7 +1,7 @@
 <template>
   <div class="skill-progress">
     <div class="skill-progress__top">
-      <img :src="iconUrl" alt="icon" class="skill-progress__icon">
+      <img :src="image" alt="icon" class="skill-progress__icon">
       <div class="skill-progress__name">{{ name }}</div>
     </div>
     <div class="progress">
@@ -30,11 +30,11 @@ export default {
       required: true
     }
   },
-  computed: {
+  /*computed: {
     iconUrl() {
       return process.env.VUE_APP_URL + this.image
     }
-  }
+  }*/
 }
 </script>
 
