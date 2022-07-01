@@ -35,7 +35,6 @@
           </div>
           <div class="form-area form__item">
             <div class="form-label form-label--top">Write your message here <span>*</span></div>
-
             <auto-textarea
                 class="textarea"
                 required
