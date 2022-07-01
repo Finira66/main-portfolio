@@ -7,7 +7,7 @@
       <form
           enctype="multipart/form-data"
           method="post"
-          @submitю.prevent="submit"
+          @submit.prevent="submit"
           class="form">
         <div class="form__items">
           <div class="form-area form__item">
