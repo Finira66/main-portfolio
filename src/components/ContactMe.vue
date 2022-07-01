@@ -7,7 +7,7 @@
       <form
           enctype="multipart/form-data"
           method="post"
-          @submit.prevent="submit('https://strapifront-wm46.onrender.com/send.php')"
+          @submit.prevent="submit()"
           class="form">
         <div class="form__items">
           <div class="form-area form__item">
@@ -77,7 +77,7 @@ export default {
         input.classList.remove('active');
       }
     },
-    async submit(php) {
+    async submit() {
       await this.axios.post('https://strapifront-wm46.onrender.com/send.php', {
         'name': this.name,
         'email': this.email,
