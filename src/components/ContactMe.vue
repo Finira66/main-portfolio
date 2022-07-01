@@ -78,7 +78,7 @@ export default {
       }
     },
     submit() {
-      this.axios.post('send.php').then(response => {
+      this.axios.post('https://strapifront-wm46.onrender.com/send.php').then(response => {
         console.log('success', response.data.message)
       }).catch(error => {
         console.log(error.response)
