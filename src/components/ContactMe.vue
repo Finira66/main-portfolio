@@ -5,8 +5,6 @@
         Contact Me
       </div>
       <form
-          enctype="multipart/form-data"
-          method="post"
           @submit.prevent="submit()"
           class="form">
         <div class="form__items">
@@ -78,15 +76,12 @@ export default {
       }
     },
     async submit() {
-      await this.axios.post('https://strapifront-wm46.onrender.com/send.php', {
-        'name': this.name,
-        'email': this.email,
-        'message': this.message
-      }).then(response => {
-        console.log('success', response)
-      }).catch(error => {
-        console.log(error.response)
-      });
+      await this.axios.post('https://strapifront-wm46.onrender.com/send.php')
+          .then(response => {
+            console.log('success', response)
+          }).catch(error => {
+            console.log(error.response)
+          });
 
 
       /*console.log("Отправка запроса");
