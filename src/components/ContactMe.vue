@@ -7,7 +7,7 @@
       <form
           enctype="multipart/form-data"
           method="post"
-          @submit.prevent="submit"
+          @submit.prevent="submit('https://strapifront-wm46.onrender.com/send.php')"
           class="form">
         <div class="form__items">
           <div class="form-area form__item">
@@ -77,8 +77,8 @@ export default {
         input.classList.remove('active');
       }
     },
-    submit() {
-      this.axios.post('https://strapifront-wm46.onrender.com/send.php', {
+    submit(php) {
+      /*this.axios.post('https://strapifront-wm46.onrender.com/send.php', {
         'name': this.name,
         'email': this.email,
         'message': this.message
@@ -86,10 +86,10 @@ export default {
         console.log('success', response.data.message)
       }).catch(error => {
         console.log(error.response)
-      });
+      });*/
 
 
-      /*console.log("Отправка запроса");
+      console.log("Отправка запроса");
 
       let req = new XMLHttpRequest();
       req.open('POST', php, true);
@@ -109,7 +109,7 @@ export default {
         } else {
           alert("Ошибка сервера. Номер: " + req.status);
         }
-      };*/
+      };
     }
   }
 }
