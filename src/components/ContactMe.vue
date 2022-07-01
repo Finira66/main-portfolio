@@ -78,11 +78,7 @@ export default {
       }
     },
     submit() {
-      this.axios.post('send.php', {
-        'name': this.name,
-        'email': this.email,
-        'message': this.message
-      }).then(response => {
+      this.axios.post('send.php').then(response => {
         console.log('success', response.data.message)
       }).catch(error => {
         console.log(error.response)
