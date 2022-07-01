@@ -10,6 +10,7 @@ axios.defaults.baseURL = process.env.VUE_APP_API_ENDPOINT;
 import './styles/main.scss'
 
 import BaseButton from "@/components/UI/BaseButton";
+import AutoTextarea from "@/components/UI/AutoTextarea";
 
 
 const app = createApp(App);
@@ -20,5 +21,6 @@ app.use(VueAxios, axios);
 app.use(router);
 
 app.component('base-button', BaseButton);
+app.component('auto-textarea', AutoTextarea)
 
 app.mount('#app');

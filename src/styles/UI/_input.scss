@@ -25,7 +25,8 @@
 
 .textarea {
   resize: none;
-  height: rem(100px);
+  transition: none;
+  min-height: rem(100px);
   &.active {
     padding-top: rem(26px);
   }

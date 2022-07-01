@@ -30,19 +30,21 @@
                 name="email"
                 v-model="email"
                 @focus="handleFocus"
-                @blur="handleBlur">
+                @blur="handleBlur"
+            >
           </div>
           <div class="form-area form__item">
             <div class="form-label form-label--top">Write your message here <span>*</span></div>
-            <textarea
+
+            <auto-textarea
                 class="textarea"
                 required
                 name="message"
                 v-model="message"
+                maxlength="600"
                 @focus="handleFocus"
                 @blur="handleBlur"
-                rows="6"
-            ></textarea>
+            ></auto-textarea>
           </div>
         </div>
         <button class="button form__button">send message</button>
