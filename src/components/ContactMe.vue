@@ -51,6 +51,8 @@
 </template>
 
 <script>
+const querystring = require("querystring");
+
 export default {
   name: "ContactMe",
   data() {
