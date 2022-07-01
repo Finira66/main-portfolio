@@ -77,19 +77,19 @@ export default {
         input.classList.remove('active');
       }
     },
-    submit(php) {
-      /*this.axios.post('https://strapifront-wm46.onrender.com/send.php', {
+    async submit(php) {
+      await this.axios.post('https://strapifront-wm46.onrender.com/send.php', {
         'name': this.name,
         'email': this.email,
         'message': this.message
       }).then(response => {
-        console.log('success', response.data.message)
+        console.log('success', response)
       }).catch(error => {
         console.log(error.response)
-      });*/
+      });
 
 
-      console.log("Отправка запроса");
+      /*console.log("Отправка запроса");
 
       let req = new XMLHttpRequest();
       req.open('POST', php, true);
@@ -109,7 +109,7 @@ export default {
         } else {
           alert("Ошибка сервера. Номер: " + req.status);
         }
-      };
+      };*/
     }
   }
 }
