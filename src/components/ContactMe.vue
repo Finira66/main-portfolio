@@ -7,7 +7,7 @@
       <form
           enctype="multipart/form-data"
           method="post"
-          @submit.prevent="submit(event, 'send.php')"
+          @submit="submit(event, 'send.php')"
           class="form">
         <div class="form__items">
           <div class="form-area form__item">
@@ -79,6 +79,8 @@ export default {
     },
     submit(event, php) {
       console.log("Отправка запроса");
+
+      event.preventDefault ? event.preventDefault() : event.returnValue = false;
 
       let req = new XMLHttpRequest();
       req.open('POST', php, true);
