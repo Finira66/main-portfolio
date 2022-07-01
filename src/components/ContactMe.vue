@@ -15,7 +15,7 @@
                 class="input"
                 required
                 name="name"
-                v-model="name"
+                v-model="form.name"
                 @focus="handleFocus"
                 @blur="handleBlur">
           </div>
@@ -26,7 +26,7 @@
                 class="input"
                 required
                 name="email"
-                v-model="email"
+                v-model="form.email"
                 @focus="handleFocus"
                 @blur="handleBlur"
             >
@@ -37,7 +37,7 @@
                 class="textarea"
                 required
                 name="message"
-                v-model="message"
+                v-model="form.message"
                 maxlength="600"
                 @focus="handleFocus"
                 @blur="handleBlur"
@@ -55,9 +55,11 @@ export default {
   name: "ContactMe",
   data() {
     return {
-      name: '',
-      email: '',
-      message: ''
+      form: {
+        name: '',
+        email: '',
+        message: ''
+      }
     }
   },
   methods: {
@@ -76,13 +78,22 @@ export default {
       }
     },
     async submit() {
-      await this.axios.post('https://strapifront-wm46.onrender.com/send.php')
+      await this.axios.post('https://strapifront-wm46.onrender.com/send.php',
+          querystring.stringify(this.ContactForm))
           .then(response => {
             console.log('success', response)
           }).catch(error => {
             console.log(error.response)
           });
 
+      this.axios.post('https://strapifront-wm46.onrender.com/send.php',
+          querystring.stringify(this.form))
+          .then(response => {
+            console.log('success', response)
+          })
+          .catch(error => {
+            console.log(error.response)
+          });
 
       /*console.log("Отправка запроса");
 
