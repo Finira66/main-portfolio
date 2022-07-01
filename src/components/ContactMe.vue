@@ -7,7 +7,7 @@
       <form
           enctype="multipart/form-data"
           method="post"
-          @submit="submit(event, 'send.php')"
+          @submitю.prevent="submit"
           class="form">
         <div class="form__items">
           <div class="form-area form__item">
@@ -77,10 +77,19 @@ export default {
         input.classList.remove('active');
       }
     },
-    submit(event, php) {
-      console.log("Отправка запроса");
+    submit() {
+      this.axios.post('send.php', {
+        'name': this.name,
+        'email': this.email,
+        'message': this.message
+      }).then(response => {
+        console.log('success', response.data.message)
+      }).catch(error => {
+        console.log(error.response)
+      });
 
-      event.preventDefault ? event.preventDefault() : event.returnValue = false;
+
+      /*console.log("Отправка запроса");
 
       let req = new XMLHttpRequest();
       req.open('POST', php, true);
@@ -100,7 +109,7 @@ export default {
         } else {
           alert("Ошибка сервера. Номер: " + req.status);
         }
-      };
+      };*/
     }
   }
 }
