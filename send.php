@@ -28,16 +28,16 @@ try {
     //$mail->SMTPDebug = 2;
     $mail->Debugoutput = function($str, $level) {$GLOBALS['status'][] = $str;};
 
-    // Настройки вашей почты
-    $mail->Host       = 'smtp.gmail.com'; // SMTP сервера вашей почты
-    $mail->Username   = 'finiraf@gmail.com'; // Логин на почте
-    $mail->Password   = 'eczhjvcxiwplyufm'; // Пароль на почте для внешних приложений
-    $mail->SMTPSecure = 'ssl';
-    $mail->Port       = 465;
-    $mail->setFrom('finiraf@gmail.com', 'Имя отправителя'); // Адрес самой почты и имя отправителя
+     // Настройки вашей почты
+        $mail->Host       = 'smtp.mail.ru'; // SMTP сервера вашей почты
+        $mail->Username   = 'invegaz@mail.ru'; // Логин на почте
+        $mail->Password   = 'VDZWrqVGl4We0GSTgfi9'; // Пароль на почте для внешних приложений
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port       = 465;
+        $mail->setFrom('invegaz@mail.ru', 'Имя отправителя'); // Адрес самой почты и имя отправителя
 
     // Получатель письма
-    $mail->addAddress('finiraf@gmail.com');
+    $mail->addAddress('invegaz@mail.ru');
 
     // Прикрепление файлов к письму
     if (!empty($file['name'][0])) {
