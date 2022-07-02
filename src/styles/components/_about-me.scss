@@ -89,4 +89,18 @@
       font-size: rem(14px);
     }
   }
+
+  &__description {
+    margin: rem(34px) 0 0 0;
+    font-size: rem(18px);
+    line-height: 1.5;
+    @media (max-width: 768px) {
+      font-size: rem(16px);
+      margin: rem(24px) 0 0 0;
+    }
+    @media (max-width: 576px) {
+      font-size: rem(14px);
+      margin: rem(22px) 0 0 0;
+    }
+  }
 }
