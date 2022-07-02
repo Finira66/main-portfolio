@@ -98,11 +98,18 @@ export default {
         return
       }
 
-      this.axios.post('http://localhost:1337/api/requests', {
+      this.axios.post('requests', {
         "data": this.form
       })
       .then(response => {
         console.log('success', response)
+        this.form = {
+          name: '',
+          email: '',
+          message: ''
+        }
+        this.errorText = '';
+        alert('Thank you! The form has been submitted')
       })
       .catch(error => {
         console.log(error.response.data.error.message)
