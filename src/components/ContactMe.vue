@@ -118,10 +118,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.error-text {
-  margin: rem(30px) 0 0 0;
-  color: #d21f1f;;
-}
-</style>
