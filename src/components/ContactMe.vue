@@ -13,7 +13,6 @@
             <input
                 type="text"
                 class="input"
-                required
                 name="name"
                 v-model="form.name"
                 @focus="handleFocus"
@@ -24,7 +23,6 @@
             <input
                 type="text"
                 class="input"
-                required
                 name="email"
                 v-model="form.email"
                 @focus="handleFocus"
@@ -35,7 +33,6 @@
             <div class="form-label form-label--top">Write your message here <span>*</span></div>
             <auto-textarea
                 class="textarea"
-                required
                 name="message"
                 v-model="form.message"
                 maxlength="600"
@@ -43,7 +40,13 @@
                 @blur="handleBlur"
             ></auto-textarea>
           </div>
+
+          <p class="error-text">
+            {{ errorText }}
+          </p>
+
         </div>
+
         <button class="button form__button">send message</button>
       </form>
     </div>
@@ -51,16 +54,17 @@
 </template>
 
 <script>
-const querystring = require("querystring");
+// const querystring = require("querystring");
 
 export default {
   name: "ContactMe",
   data() {
     return {
+      errorText: '',
       form: {
         name: '',
         email: '',
-        message: ''
+        message: '',
       }
     }
   },
@@ -80,45 +84,37 @@ export default {
       }
     },
     async submit() {
-      await this.axios.post('https://strapifront-wm46.onrender.com/send.php',
-          querystring.stringify(this.ContactForm))
-          .then(response => {
-            console.log('success', response)
-          }).catch(error => {
-            console.log(error.response)
-          });
 
-      this.axios.post('https://strapifront-wm46.onrender.com/send.php',
-          querystring.stringify(this.form))
-          .then(response => {
-            console.log('success', response)
-          })
-          .catch(error => {
-            console.log(error.response)
-          });
+      if (this.form.name === '') {
+        this.errorText = '* Write name'
+        return
+      }
+      if (this.form.email === '' || !this.form.email.includes('@')) {
+        this.errorText = '* Write e-mail'
+        return
+      }
+      if (this.form.message === '') {
+        this.errorText = '* Write message'
+        return
+      }
 
-      /*console.log("Отправка запроса");
-
-      let req = new XMLHttpRequest();
-      req.open('POST', php, true);
-      req.onload = function () {
-        if (req.status >= 200 && req.status < 400) {
-          let json = JSON.parse(this.response);
-
-          // ЗДЕСЬ УКАЗЫВАЕМ ДЕЙСТВИЯ В СЛУЧАЕ УСПЕХА ИЛИ НЕУДАЧИ
-          if (json.result == "success") {
-            // Если сообщение отправлено
-            alert("Данные отправлены");
-          } else {
-            // Если произошла ошибка
-            alert("Ошибка. Сообщение не отправлено");
-          }
-          // Если не удалось связаться с php файлом
-        } else {
-          alert("Ошибка сервера. Номер: " + req.status);
-        }
-      };*/
+      this.axios.post('http://localhost:1337/api/requests', {
+        "data": this.form
+      })
+      .then(response => {
+        console.log('success', response)
+      })
+      .catch(error => {
+        console.log(error.response.data.error.message)
+      });
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.error-text {
+  margin: rem(30px) 0 0 0;
+  color: #d21f1f;;
+}
+</style>
