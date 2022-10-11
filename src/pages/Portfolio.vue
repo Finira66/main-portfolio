@@ -13,12 +13,20 @@
 
       <div class="portfolio__inner">
         <div class="cards-grid">
-          <PortfolioCard
+<!--          <PortfolioCard
               v-for="work in works"
               :key="work.id"
               :name="work.attributes.name"
               :link="work.attributes.link"
               :image="work.attributes.image.data.attributes.url"
+          />-->
+
+          <PortfolioCard
+              v-for="work in store.works"
+              :key="work.id"
+              :name="work.name"
+              :link="work.link"
+              :image="require('@/assets/images/works/' + work.image)"
           />
 
         </div>
@@ -28,10 +36,21 @@
   </div>
 </template>
 
-<script>
-import PortfolioCard from "@/components/PortfolioCard";
 
-export default {
+<script>
+  export default {
+    name: "PortfolioPage",
+  }
+</script>
+
+<script setup>
+import PortfolioCard from "@/components/PortfolioCard";
+import {usePortfolioStore} from "@/store/portfolio";
+
+const store = usePortfolioStore();
+
+
+/*export default {
   name: "PortfolioPage",
   components: {
     PortfolioCard,
@@ -90,9 +109,5 @@ export default {
     this.observer.observe(observerElement);
 
   }
-}
+}*/
 </script>
-
-<style scoped>
-
-</style>

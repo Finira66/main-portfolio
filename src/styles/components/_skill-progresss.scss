@@ -1,12 +1,10 @@
 .skill-progress {
-  /*width: 50%;
-  margin-left: auto;
-  margin-right: auto;*/
   &__top {
     display: flex;
     align-items: center;
     margin-bottom: rem(20px);
   }
+
   &__icon {
     width: rem(29px);
     height: rem(29px);
@@ -17,6 +15,7 @@
       height: rem(24px);
     }
   }
+
   &__name {
     font-size: rem(24px);
     font-weight: 500;

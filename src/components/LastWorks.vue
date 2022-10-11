@@ -6,12 +6,20 @@
       </div>
 
       <div class="cards-grid">
-        <PortfolioCard
+<!--        <PortfolioCard
             v-for="work in works"
             :key="work.id"
             :name="work.attributes.name"
             :link="work.attributes.link"
             :image="work.attributes.image.data.attributes.url"
+        />-->
+
+        <PortfolioCard
+            v-for="work in store.works"
+            :key="work.id"
+            :name="work.name"
+            :link="work.link"
+            :image="require('@/assets/images/works/' + work.image)"
         />
       </div>
 
@@ -21,10 +29,13 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import PortfolioCard from "@/components/PortfolioCard";
+import {usePortfolioStore} from "@/store/portfolio";
 
-export default {
+const store = usePortfolioStore();
+
+/*export default {
   name: "LastWorks",
   components: {PortfolioCard},
   data() {
@@ -62,7 +73,7 @@ export default {
   async mounted() {
     await this.getLastWorks();
   }
-}
+}*/
 </script>
 
 <style scoped>
