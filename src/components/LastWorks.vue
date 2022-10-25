@@ -15,7 +15,7 @@
         />-->
 
         <PortfolioCard
-            v-for="work in store.works"
+            v-for="work in filteredCards"
             :key="work.id"
             :name="work.name"
             :link="work.link"
@@ -34,6 +34,8 @@ import PortfolioCard from "@/components/PortfolioCard";
 import {usePortfolioStore} from "@/store/portfolio";
 
 const store = usePortfolioStore();
+
+const filteredCards = store.works.sort((a, b) => b.id - a.id).slice(0, 3);
 
 /*export default {
   name: "LastWorks",
