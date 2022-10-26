@@ -1,6 +1,8 @@
 <template>
   <div class="about-me">
-    <img src="../assets/images/bg-top.png" alt="img" class="about-me__img">
+    <!-- <img src="../assets/images/bg-top.png" alt="img" class="about-me__img"> -->
+
+    <div class="about-me__background"></div>
     <div class="container">
       <div class="about-me__wrapper">
         <img src="../assets/images/photo.png" alt="photo" class="about-me__photo">
