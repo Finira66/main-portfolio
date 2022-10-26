@@ -36,11 +36,17 @@ export default {
     return {
       skills: [],
       mainSkills: [
-        { id: 1, icon: 'world.svg', name: 'HTML/CSS' },
-        { id: 2, icon: 'js.svg', name: 'JavaScript' },
-        { id: 3, icon: 'vue.svg', name: 'Vue.js' },
-        { id: 4, icon: 'nuxt.svg', name: 'Nuxt.js' },
-        { id: 5, icon: 'tailwind.svg', name: 'Tailwind' },
+        { id: 1, icon: 'html.svg', name: 'HTML/PUG' },
+        { id: 2, icon: 'css.svg', name: 'CSS/SCSS' },
+        { id: 3, icon: 'js.svg', name: 'JavaScript' },
+        { id: 4, icon: 'axios.svg', name: 'Axios' },
+        { id: 5, icon: 'vue.svg', name: 'Vue.js' },
+        { id: 6, icon: 'vue.svg', name: 'Vuex' },
+        { id: 7, icon: 'pinia.svg', name: 'Pinia' },
+        { id: 8, icon: 'vite.svg', name: 'Vite' },
+        { id: 9, icon: 'nuxt.svg', name: 'Nuxt.js' },
+        { id: 10, icon: 'tailwind.svg', name: 'Tailwind' },
+        { id: 11, icon: 'github.svg', name: 'Git' },
       ]
     }
   },
